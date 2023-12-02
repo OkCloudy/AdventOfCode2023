@@ -42,17 +42,25 @@ function day1(lines) {
     console.log(sum);
 } 
 
+function reverseString(str) {
+    let yo = str.split("").reverse().join("");
+    //console.log("YO:" + yo);
+    return yo;
+}
 function day2(lines) {
     let pattern = /one|two|three|four|five|six|seven|eight|nine|\d/g;
-
+//    let pattern2 = /eno|owt|eerht|ruof|evif|xis|neves|thgie|enin|\d/g;
+//54627
     let sum = 0;
     lines.forEach((line, index) => {
         let matches = line.match(pattern);
-         console.log(matches);
-       //  console.log(matches[0]);
-//console.log(matches.pop());
+   //     let reversedString = reverseString(line);
+   //     let reversedMatches = reversedString.match(pattern2);
+      //  let last = line.lastIndexOf(line.pattern.)
+        console.log(matches);
+     //   console.log(reversedMatches);
         let first = getNumber(matches[0]);
-        let second = getNumber(matches.pop());
+        let second = getNumberback(reversedMatches[0]);
         console.log(first);
         console.log(second);
         let together = first + second;
@@ -79,6 +87,30 @@ function getNumber(number) {
     } else if (number === "eight") {
         return "8";
     } else if (number === "nine") {
+        return "9";
+    } else {
+        return number;
+    }
+}
+
+function getNumberback(number) {
+    if (number === "eno") {
+        return "1";
+    } else if (number === "owt") {
+        return "2";
+    } else if (number === "eerht") {
+        return "3";
+    } else if (number === "ruof") {
+        return "4";
+    } else if (number === "evif") {
+        return "5";
+    } else if (number === "xis") {
+        return "6";
+    } else if (number === "neves") {
+        return "7";
+    } else if (number === "thgie") {
+        return "8";
+    } else if (number === "enin") {
         return "9";
     } else {
         return number;
